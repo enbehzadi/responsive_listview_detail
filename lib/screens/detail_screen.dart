@@ -8,10 +8,10 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.find<HomeController>().typeScreen(context);
     return Scaffold(
-        body:_buildBody2( context),
+        body:_buildBodymain( context),
     );
   }
- Obx _buildBody2(BuildContext context) {
+ Obx _buildBodymain(BuildContext context) {
     return
       Obx(() {
       return
