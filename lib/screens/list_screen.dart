@@ -3,9 +3,6 @@ import 'package:get/get.dart';
 import 'package:responsive_listview_detail/controllers/detail_controller.dart';
 import 'package:responsive_listview_detail/controllers/list_controller.dart';
 import 'package:responsive_listview_detail/controllers/home_controller.dart';
-import 'tablet_screen.dart';
-import 'phone_screen.dart';
-import 'detail_screen.dart';
 class ListScreen extends StatelessWidget {
   ListScreen({Key? key}) : super(key: key);
   @override
@@ -52,7 +49,7 @@ class ListScreen extends StatelessWidget {
               ),
               onTap: () {
                //check tablet or phone
-                if (Get.find<HomeController>().isTablet.value) {
+                if (Get.find<HomeController>().isBig.value) {
                   Get.find<DetailController>().item_selected(index);
                 }
                 else {

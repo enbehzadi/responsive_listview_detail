@@ -1,10 +1,8 @@
-import 'package:responsive_listview_detail/controllers/splash_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'list_screen.dart';
 import 'detail_screen.dart';
-class TabletScreen extends StatelessWidget {
-  const TabletScreen({Key? key}) : super(key: key);
+class BigScreen extends StatelessWidget {
+  const BigScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Row(

@@ -2,13 +2,11 @@ import 'package:get/get.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/widgets.dart';
-import 'dart:math';
-import 'package:flutter/widgets.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 
 class HomeController extends GetxController {
   RxString platformType =''.obs;
-  RxBool isTablet =false.obs;
+  RxBool isBig =false.obs;
   @override
   void onInit() {
     // TODO: implement onInit
@@ -37,20 +35,19 @@ class HomeController extends GetxController {
     }
   }
  String typeScreen(BuildContext  cntx) {
-    var shortestSide = MediaQuery.of(cntx).size.shortestSide;
-
-    if( shortestSide < 600)
+    var shortestSide = MediaQuery.of(cntx).size.width;
+    var landscape = MediaQuery.of(cntx).orientation == Orientation.landscape;
+    if( shortestSide < 600||!landscape)
       {
-        isTablet.value=false;
-
-        return "phone(small screen)";
+        isBig.value=false;
+        return "small screen";
       }
     else
       {
-        isTablet.value=true;
+        isBig.value=true;
 
 
-        return "Tablet(big screen)";
+        return "big screen";
 
       }
   }
